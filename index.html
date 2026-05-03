@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mark — сайты, код, тексты</title>
+
+  <!-- Шрифты Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN + конфиг ДО использования классов -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Newsreader', 'serif'],
+            mono: ['IBM Plex Mono', 'monospace']
+          },
+          colors: {
+            bg: '#F4EFE6',
+            ink: '#15130F',
+            vermilion: '#C4392E',
+            subtle: '#8B8478'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Базовая типографика и фон */
+    body {
+      font-family: 'IBM Plex Mono', monospace;
+      background: #F4EFE6;
+      color: #15130F;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Тонкая SVG-зернистость поверх фона — имитация бумаги */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    }
+
+    /* Анимация входа — сдвиг вверх + появление */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .reveal {
+      opacity: 0;
+      animation: fadeUp 0.9s ease-out forwards;
+      animation-delay: calc(var(--i, 0) * 100ms);
+    }
+
+    /* Тонкая подчёркивающая линия для ссылок при ховере */
+    a.link { position: relative; }
+    a.link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 1px;
+      background: currentColor;
+      transform: translateY(2px);
+      opacity: 0;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+    a.link:hover::after {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Курсив Newsreader — корректное наследование стиля */
+    em.italic { font-style: italic; }
+
+    /* Выделения текста — в тон палитры */
+    ::selection { background: #15130F; color: #F4EFE6; }
+  </style>
+</head>
+<body>
+  <div class="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+
+    <!-- ВЕРХНЯЯ НАВИГАЦИЯ -->
+    <nav class="flex justify-between items-center mt-8 text-xs uppercase tracking-[0.2em] text-subtle font-mono">
+      <span>Mark / Freelance Works</span>
+      <span>Est. 2026 — Moscow</span>
+    </nav>
+    <div class="h-px bg-subtle/40 mt-6"></div>
+
+    <!-- HERO -->
+    <section class="mt-20 md:mt-32 mb-32 md:mb-48 reveal" style="--i:1">
+      <div class="font-mono text-xs uppercase tracking-widest text-subtle">§ 00 — overture</div>
+      <h1 class="font-display font-normal text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight max-w-5xl mt-6">
+        Делаю сайты, <em class="italic font-display text-vermilion">пишу</em> код, пишу тексты.
+      </h1>
+      <p class="mt-10 max-w-xl font-mono text-sm md:text-base text-ink/70 leading-relaxed">
+        Фрилансер из Москвы. Python, JavaScript, статичные сайты, парсеры, Telegram-боты. Тексты на русском и английском. Без воды, без шаблонов.
+      </p>
+    </section>
+
+    <!-- SECTION 01 — О СЕБЕ -->
+    <section class="grid grid-cols-12 gap-6 md:gap-8 py-24 md:py-32 border-t border-subtle/30 reveal" style="--i:2">
+      <aside class="col-span-12 md:col-start-11 md:col-span-2 order-first md:order-last font-mono text-xs uppercase tracking-[0.18em] text-subtle">
+        § 01 — about
+      </aside>
+      <div class="col-span-12 md:col-span-9">
+        <div class="font-display font-normal text-7xl md:text-9xl leading-none text-ink/90">01</div>
+        <h2 class="mt-8 font-display font-normal text-3xl md:text-4xl">О себе</h2>
+        <div class="mt-10 grid gap-4 font-mono text-base md:text-lg leading-relaxed max-w-2xl">
+          <p>Пишу код шесть лет. До этого — журналистика и редактура.</p>
+          <p>Берусь за то, где результат можно посмотреть в браузере или запустить из терминала.</p>
+          <p>Не делаю дизайн с нуля — но переношу макеты в код аккуратно.</p>
+          <p>Работаю по предоплате 30%, остальное — после демо.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02 — ЧТО ДЕЛАЮ -->
+    <section class="grid grid-cols-12 gap-6 md:gap-8 py-24 md:py-32 border-t border-subtle/30 reveal" style="--i:3">
+      <aside class="col-span-12 md:col-start-11 md:col-span-2 order-first md:order-last font-mono text-xs uppercase tracking-[0.18em] text-subtle">
+        § 02 — capabilities
+      </aside>
+      <div class="col-span-12 md:col-span-10">
+        <!-- Единственный акцент в этой секции — номер 02 целиком vermilion -->
+        <div class="font-display font-normal text-7xl md:text-9xl leading-none text-vermilion">02</div>
+        <h2 class="mt-8 font-display font-normal text-3xl md:text-4xl">Что делаю</h2>
+
+        <div class="mt-12">
+          <!-- Пункт 01 -->
+          <div class="border-t border-subtle/30 py-8 grid grid-cols-12 gap-4 items-baseline">
+            <div class="col-span-2 md:col-span-1 font-mono text-sm text-subtle">→ 01</div>
+            <div class="col-span-10 md:col-span-5 font-display text-2xl md:text-3xl italic">Сайты на заказ</div>
+            <div class="col-span-12 md:col-span-6 font-mono text-sm text-ink/70 max-w-md">Лендинги, портфолио, простые SPA. HTML/CSS/JS, Tailwind, иногда React.</div>
+          </div>
+          <!-- Пункт 02 -->
+          <div class="border-t border-subtle/30 py-8 grid grid-cols-12 gap-4 items-baseline">
+            <div class="col-span-2 md:col-span-1 font-mono text-sm text-subtle">→ 02</div>
+            <div class="col-span-10 md:col-span-5 font-display text-2xl md:text-3xl italic">Python скрипты и боты</div>
+            <div class="col-span-12 md:col-span-6 font-mono text-sm text-ink/70 max-w-md">Парсеры, автоматизация, Telegram-боты, обработка данных, интеграции с API.</div>
+          </div>
+          <!-- Пункт 03 -->
+          <div class="border-t border-subtle/30 py-8 grid grid-cols-12 gap-4 items-baseline">
+            <div class="col-span-2 md:col-span-1 font-mono text-sm text-subtle">→ 03</div>
+            <div class="col-span-10 md:col-span-5 font-display text-2xl md:text-3xl italic">SEO-тексты и статьи</div>
+            <div class="col-span-12 md:col-span-6 font-mono text-sm text-ink/70 max-w-md">Тексты для лендингов, блогов, маркетплейсов. Без LLM-воды, с фактчеком.</div>
+          </div>
+          <!-- Пункт 04 (последний — без border-bottom; верхняя линия остаётся) -->
+          <div class="border-t border-subtle/30 py-8 grid grid-cols-12 gap-4 items-baseline">
+            <div class="col-span-2 md:col-span-1 font-mono text-sm text-subtle">→ 04</div>
+            <div class="col-span-10 md:col-span-5 font-display text-2xl md:text-3xl italic">Переводы EN-RU</div>
+            <div class="col-span-12 md:col-span-6 font-mono text-sm text-ink/70 max-w-md">Технические тексты, документация, статьи. Сохраняю смысл, а не дословность.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03 — РАБОТЫ -->
+    <section class="grid grid-cols-12 gap-6 md:gap-8 py-24 md:py-32 border-t border-subtle/30 reveal" style="--i:4">
+      <aside class="col-span-12 md:col-start-11 md:col-span-2 order-first md:order-last font-mono text-xs uppercase tracking-[0.18em] text-subtle">
+        § 03 — selected work
+      </aside>
+      <div class="col-span-12 md:col-span-10">
+        <div class="font-display font-normal text-7xl md:text-9xl leading-none text-ink/90">03</div>
+        <h2 class="mt-8 font-display font-normal text-3xl md:text-4xl">Работы</h2>
+        <p class="mt-4 font-mono text-sm text-subtle italic">Скоро здесь будут демо-проекты.</p>
+
+        <div class="mt-12 grid grid-cols-12 gap-6">
+          <!-- Карточка 1 -->
+          <article class="col-span-12 md:col-span-4 border border-subtle/40 p-6 flex flex-col justify-between aspect-[4/5] hover:border-ink transition-colors duration-300">
+            <div class="font-mono text-xs text-subtle uppercase tracking-widest">WIP / 01</div>
+            <div>
+              <div class="font-display text-xl italic">Лендинг для студии</div>
+              <div class="mt-3 font-mono text-xs text-ink/60">HTML, Tailwind, скоро демо.</div>
+            </div>
+          </article>
+          <!-- Карточка 2 -->
+          <article class="col-span-12 md:col-span-4 border border-subtle/40 p-6 flex flex-col justify-between aspect-[4/5] hover:border-ink transition-colors duration-300">
+            <div class="font-mono text-xs text-subtle uppercase tracking-widest">WIP / 02</div>
+            <div>
+              <div class="font-display text-xl italic">Telegram-бот мониторинга</div>
+              <div class="mt-3 font-mono text-xs text-ink/60">Python, aiogram, в работе.</div>
+            </div>
+          </article>
+          <!-- Карточка 3 -->
+          <article class="col-span-12 md:col-span-4 border border-subtle/40 p-6 flex flex-col justify-between aspect-[4/5] hover:border-ink transition-colors duration-300">
+            <div class="font-mono text-xs text-subtle uppercase tracking-widest">WIP / 03</div>
+            <div>
+              <div class="font-display text-xl italic">Парсер маркетплейса</div>
+              <div class="mt-3 font-mono text-xs text-ink/60">Python, requests, демо в декабре.</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04 — КОНТАКТЫ -->
+    <section class="grid grid-cols-12 gap-6 md:gap-8 py-24 md:py-32 border-t border-subtle/30 reveal" style="--i:5">
+      <aside class="col-span-12 md:col-start-11 md:col-span-2 order-first md:order-last font-mono text-xs uppercase tracking-[0.18em] text-subtle">
+        § 04 — contact
+      </aside>
+      <div class="col-span-12 md:col-span-10">
+        <div class="font-display font-normal text-7xl md:text-9xl leading-none text-ink/90">04</div>
+        <h2 class="mt-8 font-display font-normal text-3xl md:text-4xl">Связаться</h2>
+
+        <div class="mt-12">
+          <!-- FL.RU -->
+          <a class="link block py-6 border-t border-subtle/30 group hover:text-vermilion transition-colors duration-300" href="https://www.fl.ru/users/markmarkmarksur/" target="_blank" rel="noopener">
+            <div class="grid grid-cols-12 gap-4 items-baseline">
+              <div class="col-span-2 font-mono text-sm text-subtle">FL.RU</div>
+              <div class="col-span-8 font-display text-2xl md:text-5xl italic break-words">fl.ru/users/markmarkmarksur</div>
+              <div class="col-span-2 font-mono text-xs text-subtle text-right">→ 01</div>
+            </div>
+          </a>
+          <!-- KWORK -->
+          <a class="link block py-6 border-t border-subtle/30 group" href="https://kwork.ru/" target="_blank" rel="noopener">
+            <div class="grid grid-cols-12 gap-4 items-baseline">
+              <div class="col-span-2 font-mono text-sm text-subtle">KWORK</div>
+              <div class="col-span-8 font-display text-2xl md:text-5xl italic break-words">kwork.ru/user/mark</div>
+              <div class="col-span-2 font-mono text-xs text-subtle text-right">→ 02</div>
+            </div>
+          </a>
+          <!-- EMAIL -->
+          <a class="link block py-6 border-t border-b border-subtle/30 group" href="mailto:elenasvengur@gmail.com">
+            <div class="grid grid-cols-12 gap-4 items-baseline">
+              <div class="col-span-2 font-mono text-sm text-subtle">EMAIL</div>
+              <div class="col-span-8 font-display text-2xl md:text-5xl italic break-words">elenasvengur@gmail.com</div>
+              <div class="col-span-2 font-mono text-xs text-subtle text-right">→ 03</div>
+            </div>
+          </a>
+
+          <!-- Vermilion-печать в конце -->
+          <div class="mt-10 flex items-center gap-3">
+            <span class="inline-block bg-vermilion" style="width:8px; height:8px; border-radius:9999px;"></span>
+            <span class="font-mono text-xs uppercase tracking-[0.2em] text-subtle">end of transmission</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-32 pt-8 pb-12 border-t border-subtle/30 flex justify-between text-xs font-mono text-subtle uppercase tracking-[0.18em]">
+      <span>© 2026 MARK / All Rights Reserved</span>
+      <span id="clock">—:—:—</span>
+    </footer>
+
+  </div>
+
+  <!-- Часы в футере: обновляются раз в секунду -->
+  <script>
+    const clock = document.getElementById('clock');
+    function tick(){
+      const d = new Date();
+      const p = n => String(n).padStart(2, '0');
+      clock.textContent = p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds()) + ' MSK';
+    }
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+</html>
