@@ -181,33 +181,15 @@
           <!-- Карточка 1 — Pricewatch (SaaS, dark luxury) -->
           <a href="https://nSQUICK.github.io/mark-demo-saas/" target="_blank" rel="noopener"
              class="group col-span-12 md:col-span-6 border border-subtle/40 hover:border-ink transition-colors duration-300 flex flex-col">
-            <!-- Thumbnail в палитре самого проекта: чёрный + золотой акцент -->
-            <div class="aspect-[5/3] relative overflow-hidden"
-                 style="background:#0A0A0A; color:#E8E5DE; font-family:'IBM Plex Mono', monospace;">
-              <!-- лёгкая виньетка -->
-              <div class="absolute inset-0" style="background:radial-gradient(120% 80% at 80% 10%, rgba(212,165,116,0.08), transparent 60%);"></div>
-              <!-- top-bar mock -->
-              <div class="absolute top-4 left-5 right-5 flex items-center gap-2 text-[10px] uppercase tracking-[0.2em]" style="color:rgba(232,229,222,0.55);">
-                <span class="inline-block w-1.5 h-1.5 rounded-full" style="background:rgba(232,229,222,0.25);"></span>
-                <span class="inline-block w-1.5 h-1.5 rounded-full" style="background:rgba(232,229,222,0.25);"></span>
-                <span class="inline-block w-1.5 h-1.5 rounded-full" style="background:rgba(232,229,222,0.25);"></span>
-                <span class="ml-3">pricewatch.app</span>
-              </div>
-              <!-- метрика в центре -->
-              <div class="absolute left-5 right-5 top-1/2 -translate-y-1/2">
-                <div class="text-[10px] uppercase tracking-[0.25em]" style="color:#D4A574;">PRICING INTELLIGENCE</div>
-                <div class="mt-2 font-display italic text-3xl md:text-5xl leading-none" style="font-family:'Newsreader', serif; color:#E8E5DE;">
-                  0.4<span style="color:#D4A574;">s</span>
-                </div>
-                <div class="mt-2 text-[11px]" style="color:rgba(232,229,222,0.55);">avg price refresh</div>
-              </div>
-              <!-- золотая нижняя черта - единственный крупный акцент -->
-              <div class="absolute bottom-0 left-0 h-[2px]" style="width:38%; background:#D4A574;"></div>
-              <!-- mock table hint справа внизу -->
-              <div class="absolute bottom-4 right-5 text-right text-[10px] leading-relaxed" style="color:rgba(232,229,222,0.45);">
-                <div>SKU · конкурент · Δ</div>
-                <div>—— · —— · <span style="color:#7B8E6F;">↓ 4%</span></div>
-              </div>
+            <!-- Thumbnail: реальное изображение SaaS-дашборда -->
+            <div class="aspect-[5/3] relative overflow-hidden bg-[#0A0A0A]">
+              <img src="https://image.pollinations.ai/prompt/dark%20saas%20dashboard%20cyan%20glow%20charts%20screenshot%20minimalist%20futuristic?width=1200&height=750&seed=200&nologo=true&model=flux"
+                   alt="" loading="lazy"
+                   class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+              <!-- лёгкое затемнение для контраста подписи -->
+              <div class="absolute inset-0" style="background:linear-gradient(180deg, transparent 55%, rgba(10,10,10,0.55) 100%);"></div>
+              <!-- цветная нижняя черта в палитре проекта -->
+              <div class="absolute bottom-0 left-0 h-[2px]" style="width:38%; background:#00D9FF;"></div>
             </div>
             <!-- META -->
             <div class="p-6 flex flex-col gap-3">
@@ -226,28 +208,14 @@
           <!-- Карточка 2 — Соль (кафе, warm sensory) -->
           <a href="https://nSQUICK.github.io/mark-demo-cafe/" target="_blank" rel="noopener"
              class="group col-span-12 md:col-span-6 border border-subtle/40 hover:border-ink transition-colors duration-300 flex flex-col">
-            <!-- Thumbnail в палитре кафе: кремовый + бордовый, gradient mesh -->
-            <div class="aspect-[5/3] relative overflow-hidden"
-                 style="background:#EFE3D2; color:#2B1F18;">
-              <!-- многослойный gradient mesh имитирующий тёплый свет -->
-              <div class="absolute inset-0" style="
-                background:
-                  radial-gradient(60% 70% at 25% 30%, rgba(232,183,145,0.95), transparent 65%),
-                  radial-gradient(50% 60% at 75% 20%, rgba(201,144,90,0.55), transparent 70%),
-                  radial-gradient(70% 80% at 80% 90%, rgba(107,44,42,0.35), transparent 70%),
-                  radial-gradient(40% 50% at 30% 85%, rgba(239,227,210,0.9), transparent 60%);
-              "></div>
-              <!-- лёгкое зерно -->
-              <div class="absolute inset-0" style="opacity:0.18; mix-blend-mode:overlay;
-                background-image:url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>&quot;);"></div>
-              <!-- название курсивом по центру -->
-              <div class="absolute left-6 right-6 top-1/2 -translate-y-1/2">
-                <div class="text-[10px] uppercase tracking-[0.25em]" style="font-family:'IBM Plex Mono', monospace; color:rgba(43,31,24,0.65);">КОФЕ И ВРЕМЯ — С 2024</div>
-                <div class="mt-2 italic leading-[0.9] text-4xl md:text-6xl" style="font-family:'Newsreader', serif; color:#2B1F18;">
-                  место, где время<br><span style="color:#6B2C2A;">медленнее</span>
-                </div>
-              </div>
-              <!-- бордовая линия снизу -->
+            <!-- Thumbnail: реальная фотография кофейни -->
+            <div class="aspect-[5/3] relative overflow-hidden bg-[#EFE3D2]">
+              <img src="https://image.pollinations.ai/prompt/cinematic%20cafe%20espresso%20warm%20atmospheric%20film%20photography?width=1200&height=750&seed=201&nologo=true&model=flux"
+                   alt="" loading="lazy"
+                   class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+              <!-- лёгкое затемнение снизу -->
+              <div class="absolute inset-0" style="background:linear-gradient(180deg, transparent 55%, rgba(43,31,24,0.45) 100%);"></div>
+              <!-- бордовая линия снизу — сохранили акцент -->
               <div class="absolute bottom-0 right-0 h-[2px]" style="width:32%; background:#6B2C2A;"></div>
             </div>
             <!-- META -->
